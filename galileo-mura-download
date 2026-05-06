@@ -42,7 +42,7 @@ sleep 5s
 
 echo "[galileo-mura] Going to download mura for $display_serial from $mura_url"
 
-status_code=$(wget -NS -O "$mura_tar_file" "$mura_url" 2>&1 | grep "HTTP/" | awk '{print $2}') || true
+status_code=$(wget -S -O "$mura_tar_file" "$mura_url" 2>&1 | grep "HTTP/" | awk '{print $2}') || true
 
 if [ "$status_code" = "200" ]; then
     if [ -f "$mura_tar_file" ]; then
